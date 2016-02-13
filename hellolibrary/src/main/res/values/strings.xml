@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">HelloLibrary</string>
+    <string name="hello">Hello!</string>
+    <string name="content">This is my custom view from my hello library kulomady</string>
+</resources>
