@@ -2,10 +2,6 @@ apply plugin: 'com.android.library'
 apply plugin: 'com.jfrog.bintray'
 apply plugin: 'com.github.dcendents.android-maven'
 
-group = 'com.mady.learnlibray' // package name
-version = '1.0.1' // version number
-
-
 android {
     compileSdkVersion 23
     buildToolsVersion "23.0.1"
@@ -30,6 +26,7 @@ dependencies {
     compile 'com.android.support:appcompat-v7:23.1.1'
 }
 
+
 task generateSourcesJar(type: Jar) {
     from android.sourceSets.main.java.srcDirs
     classifier 'sources'
@@ -52,4 +49,32 @@ artifacts {
     archives generateJavadocsJar
     archives generateSourcesJar
 }
+
+ext {
+    bintrayRepo = 'maven'
+    bintrayName = '1.0.2-tuts'
+
+    publishedGroupId = 'com.mady.hellolibrary'
+    libraryName = 'hellolibrary'
+    artifact = 'hellolibrary'
+
+    libraryDescription = 'First testing distribute library'
+
+    siteUrl = 'https://github.com/kulomady/FirstModule'
+    gitUrl = 'hhttps://github.com/kulomady/FirstModule'
+
+    libraryVersion = '1.0.2'
+
+    developerId = 'kulomady'
+    developerName = 'Namikulo Rohmadi'
+    developerEmail = 'kulomady@gmail.com'
+
+    licenseName = 'The Apache Software License, Version 2.0'
+    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+    allLicenses = ["Apache-2.0"]
+}
+
+apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/installv1.gradle'
+apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/bintrayv1.gradle'
+
 
